@@ -24,5 +24,30 @@ Põe no repositório
 - Deve-se atualizar o sketch e o spiffs;
 
 
-ge42_1.2.2.spiffs.bin
-ge_firmware_1.2.2.ino.esp32.bin
+- Situação atual:
+
+ge42_1.2.2.spiffs.bin              -> busca -> ge42_1.2.3.spiffs.bin 
+ge42_firmware_1.2.2.ino.esp32.bin  -> busca -> ge42_firmware_1.2.3.ino.esp32.bin
+
+- Situação H4CK:
+
+Disponibiliza apenas o Sketch: ge42_firmware_1.2.3.ino.esp32.bin, porém com o ge alterado internamente (ge8000)
+
+- Situação atualizada temporariamente:
+
+Apesar de não ser encontrado ge8000.txt/ge42.txt no sistema, caso não haja re-início, as credenciais da rede se manterão, fazendo com que:
+
+                                     -> busca -> ge8000_1.2.4.spiffs.bin 
+ge8000_firmware_1.2.3.ino.esp32.bin  -> busca -> ge8000_firmware_1.2.4.ino.esp32.bin
+
+Neste caso oferece-se apenas a atualização para o spiffs e ge8000_1.2.4.spiffs.bin será interpretado como ge8000_1.2.3.spiffs.bin, já que a importância de suas versão se dá apenas com a alteração do binário 
+
+- Situação atualizada estável:
+
+ge8000_1.2.3.spiffs.bin              -> busca -> ge8000_1.2.4.spiffs.bin 
+ge8000_firmware_1.2.3.ino.esp32.bin  -> busca -> ge8000_firmware_1.2.4.ino.esp32.bin
+
+### Algoritmo:
+- Versão atual ge42_1.2.2;
+- Sketch da próxima versão como ge42_1.2.3 com o ge8000 internamente;
+- Spiffs da próxima versão como ge8000_1.2.4;
